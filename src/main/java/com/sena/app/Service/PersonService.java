@@ -1,24 +1,21 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.sena.app.Service;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.sena.app.IRepository.IPersonRepository;
 import org.springframework.stereotype.Service;
 
-import com.sena.app.Entity.Person;
-import com.sena.app.IRepository.IPersonRepository;
-
+/**
+ *
+ * @author rikyf
+ */
 @Service
 public class PersonService {
-    @Autowired
-    private IPersonRepository repository;
 
-    public Person save(Person person) {
-        return repository.save(person);
+    public PersonService() {
+        this.repository = repository;
     }
-
-    public List<Person> All() {
-        return repository.findAll();
-    }
-
+    private final IPersonRepository repository;
 }

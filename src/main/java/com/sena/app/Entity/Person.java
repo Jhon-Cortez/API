@@ -27,6 +27,11 @@ public class Person {
 
     @Column(name = "status", nullable = false)
     private Boolean status;
+    
+    @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+    private User user;
+    
+    
 
     public Long getId() {
         return id;
@@ -83,4 +88,4 @@ public class Person {
     public void setStatus(Boolean status) {
         this.status = status;
     }
-}
+}           
