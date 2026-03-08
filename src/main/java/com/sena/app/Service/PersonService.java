@@ -4,7 +4,9 @@
  */
 package com.sena.app.Service;
 
+import com.sena.app.Entity.Person;
 import com.sena.app.IRepository.IPersonRepository;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,9 +15,17 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class PersonService {
-
-    public PersonService() {
+    private final IPersonRepository repository;
+    
+    public PersonService(IPersonRepository repository){
         this.repository = repository;
     }
-    private final IPersonRepository repository;
+    
+    public Person save(Person person){
+        return repository.save(person);
+    }
+    
+    public List<Person> findAll(){
+        return repository.findAll();
+    }
 }

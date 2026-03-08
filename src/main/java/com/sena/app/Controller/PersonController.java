@@ -29,11 +29,9 @@ public class PersonController {
         return new ResponseEntity<>(savedPerson, HttpStatus.CREATED);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Person>> All() {       
-        List<Person> people = service.All();
+   @GetMapping
+    public ResponseEntity<List<Person>> findAll() {       
+        List<Person> people = service.findAll();
         return new ResponseEntity<>(people, HttpStatus.OK);
     }
-
-
 }
