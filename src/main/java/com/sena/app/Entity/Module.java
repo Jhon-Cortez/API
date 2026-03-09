@@ -13,7 +13,7 @@ public class Module {
     private String name;
 
 
-    @Column(name =  "descirption", nullable = false, length = 100)
+    @Column(name =  "descirption", nullable = false, length = 250)
     private String description;
 
 

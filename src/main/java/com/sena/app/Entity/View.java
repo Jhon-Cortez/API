@@ -1,15 +1,16 @@
 package com.sena.app.Entity;
-import jakarta.persistence.*;;
 
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Role")
-public class Role {
+@Table(name = "view")
+public class View {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;    
 
-    @Column(name = "name", nullable = false, length = 100)
+    @Column(name = "name", nullable = false, length = 100 )
     private String name;
 
     @Column(name = "description", length = 250)

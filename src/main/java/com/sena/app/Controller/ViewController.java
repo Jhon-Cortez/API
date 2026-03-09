@@ -10,30 +10,28 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sena.app.Entity.Role;
-import com.sena.app.Service.RoleService;
-
+import com.sena.app.Entity.View;
+import com.sena.app.Service.ViewService;
 
 @RestController
-@RequestMapping("/api/role")
-public class RoleController {
+@RequestMapping("/api/view")
+public class ViewController {
+    
+    private final ViewService service;
 
-    private final RoleService service;
-
-    public RoleController(RoleService service){
+    public ViewController(ViewService service){
         this.service = service;
     }
-    
-
     @PostMapping
-    public ResponseEntity<Role> create(@RequestBody Role role){
-        Role savedRole = service.save(role);
-        return new ResponseEntity<>(savedRole, HttpStatus.OK);
+    public ResponseEntity<View> create(@RequestBody View view){
+        View savedView = service.save(view);
+        return new ResponseEntity<>(savedView, HttpStatus.OK);
     }
 
     @GetMapping
-    public ResponseEntity<List<Role>> findAll(){
-        List<Role> role = service.findAll();
-        return new ResponseEntity<>(role,HttpStatus.OK);
+    public ResponseEntity<List<View>> findAll(){
+        List<View> view = service.findAll();
+        return new ResponseEntity<>(view,HttpStatus.OK);
     }
+
 }
